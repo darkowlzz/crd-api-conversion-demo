@@ -1,0 +1,30 @@
+domain: demo.example.com
+layout:
+- go.kubebuilder.io/v3
+projectName: crd-api-conversion-demo
+repo: github.com/darkowlzz/crd-api-conversion-demo
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: demo.example.com
+  group: batch
+  kind: CronJob
+  path: github.com/darkowlzz/crd-api-conversion-demo/api/v1
+  version: v1
+  webhooks:
+    conversion: true
+    webhookVersion: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  domain: demo.example.com
+  group: batch
+  kind: CronJob
+  path: github.com/darkowlzz/crd-api-conversion-demo/api/v2
+  version: v2
+  webhooks:
+    conversion: true
+    webhookVersion: v1
+version: "3"

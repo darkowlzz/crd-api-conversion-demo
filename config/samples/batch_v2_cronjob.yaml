@@ -1,0 +1,7 @@
+apiVersion: batch.demo.example.com/v2
+kind: CronJob
+metadata:
+  name: cronjob-sample2
+spec:
+  # Add fields here
+  foo: bar

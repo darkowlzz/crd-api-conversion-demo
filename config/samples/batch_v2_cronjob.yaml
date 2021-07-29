@@ -4,4 +4,4 @@ metadata:
   name: cronjob-sample2
 spec:
   # Add fields here
-  foo: bar
+  foo: baz

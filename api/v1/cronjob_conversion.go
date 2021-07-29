@@ -11,6 +11,7 @@ func (src *CronJob) ConvertTo(dstRaw conversion.Hub) error {
 	dst := dstRaw.(*v2.CronJob)
 
 	dst.ObjectMeta = src.ObjectMeta
+	dst.Spec.Foo = src.Spec.Foo
 
 	return nil
 }
@@ -21,6 +22,7 @@ func (dst *CronJob) ConvertFrom(srcRaw conversion.Hub) error {
 	cronjoblog.Info("CronJob.v1 ConvertFrom called", "resource", src.Name)
 
 	dst.ObjectMeta = src.ObjectMeta
+	dst.Spec.Foo = src.Spec.Foo
 
 	return nil
 }
